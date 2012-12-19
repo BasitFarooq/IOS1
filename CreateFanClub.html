@@ -229,9 +229,8 @@
     </style>
 </head>
 <body>
-    
-        <div id="wraper">
-            <header>
+    <div id="wraper">
+        <header>
           <nav>
               <ul class="clearfix">
                   <li>
@@ -249,81 +248,81 @@
                   </li>
               </ul>
           </nav>
-          </div>
-      </header>
-            <!--  //  </div></div>-->
-            <!-- header ends -->
-            <!-- container starts-->
-            <div class="innermenu">
-                <ul class="clearfix">
-                    <li><a href="index.html" title="home" target="_self">Home</a> </li>
-                    <li class="sep"></li>
-                    <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
-                </ul>
-            </div>
-            <div class="contetns clearfix">
-                <!-- left area starts-->
-                <div class="contentLeft fLeft">
-                    <div class="innerwrapper">
-                        <!-- input -->
-                        <div class="clear">
-                            <div class="note2">
-                                <div class="form">
-                                    <h4>
-                                        <a href="FanClubSearch.html" title="#">Search for Existing Fan Clubs</a></h4>
+    </div>
+    </header>
+    <!--  //  </div></div>-->
+    <!-- header ends -->
+    <!-- container starts-->
+    <div class="innermenu">
+        <ul class="clearfix">
+            <li><a href="index.html" title="home" target="_self">Home</a> </li>
+            <li class="sep"></li>
+            <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
+        </ul>
+    </div>
+    <div class="contetns clearfix">
+        <!-- left area starts-->
+        <div class="contentLeft fLeft">
+            <div class="innerwrapper">
+                <!-- input -->
+                <div class="clear">
+                    <div class="note2">
+                        <div class="form">
+                            <h4>
+                                <a href="FanClubSearch.html" title="#">Search for Existing Fan Clubs</a></h4>
+                            <h5>
+                                <b>Fan Club Sport</b>
+                            </h5>
+                            <h5>
+                                Sport</h5>
+                            <div class="row newuser">
+                                <div id='loadingmessage' style='display: none'>
+                                    <img alt='' src='images/ajax-loader.gif' />
+                                    <span id="spnLoading" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                                        Searching Please Wait...</span>
+                                </div>
+                                <div id="ageRegister">
+                                    <h3>
+                                        Sport Category (Required)</h3>
+                                    <select name="DropDownListSportCategory" id="DropDownListSportCategory">
+                                        <option value="0" selected="true">--------</option>
+                                    </select>
+                                    <h3>
+                                        Gender / Age Identification (Optional)</h3>
+                                    <select name="DropDownListGenderIDe" id="DropDownListGenderIDe">
+                                        <option selected="true" value="0">--------</option>
+                                        <option value="Boy's">Boy's</option>
+                                        <option value="Boy's High School">Boy's High School</option>
+                                        <option value="Co-Ed">Co-Ed</option>
+                                        <option value="Co-Ed High School">Co-Ed High School</option>
+                                        <option value="Girl's">Girl's</option>
+                                        <option value="Girl's High School">Girl's High School</option>
+                                        <option value="Men's">Men's</option>
+                                        <option value="Men's College">Men's College</option>
+                                        <option value="Women's">Women's</option>
+                                        <option value="Women's College">Women's College</option>
+                                        <option value="Youth">Youth</option>
+                                    </select>
+                                    <h3>
+                                        Sport Name (Required)</h3>
+                                    <select name="DropDownListSportName" id="DropDownListSportName">
+                                        <option selected="true" value="0">--------</option>
+                                    </select>
+                                    <h3>
+                                        Fan Club Name</h3>
+                                    <input type="text" name="TextBoxFanClubName" id="TextBoxFanClubName" />
+                                    <h3>
+                                        What or Whom is this Fan Club About?</h3>
+                                    <input type="text" name="TextBoxTopic" id="TextBoxTopic" />
+                                </div>
+                                <div id="ageRegister">
                                     <h5>
-                                        <b>Fan Club Sport</b>
-                                    </h5>
-                                    <h5>
-                                        Sport</h5>
-                                    <div class="row newuser">
-                                        <div id='loadingmessage' style='display: none'>
-                                            <img alt='' src='images/ajax-loader.gif' />
-                                            <span id="spnLoading" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
-                                                Searching Please Wait...</span>
-                                        </div>
-                                        <div id="ageRegister">
-                                            <h3>
-                                                Sport Category (Required)</h3>
-                                            <select name="DropDownListSportCategory" id="DropDownListSportCategory">
-                                                <option value="0" selected="true">--------</option>
-                                            </select>
-                                            <h3>
-                                                Gender / Age Identification (Optional)</h3>
-                                            <select name="DropDownListGenderIDe" id="DropDownListGenderIDe">
-                                                <option selected="true" value="0">--------</option>
-                                                <option value="Boy's">Boy's</option>
-                                                <option value="Boy's High School">Boy's High School</option>
-                                                <option value="Co-Ed">Co-Ed</option>
-                                                <option value="Co-Ed High School">Co-Ed High School</option>
-                                                <option value="Girl's">Girl's</option>
-                                                <option value="Girl's High School">Girl's High School</option>
-                                                <option value="Men's">Men's</option>
-                                                <option value="Men's College">Men's College</option>
-                                                <option value="Women's">Women's</option>
-                                                <option value="Women's College">Women's College</option>
-                                                <option value="Youth">Youth</option>
-                                            </select>
-                                            <h3>
-                                                Sport Name (Required)</h3>
-                                            <select name="DropDownListSportName" id="DropDownListSportName">
-                                                <option selected="true" value="0">--------</option>
-                                            </select>
-                                            <h3>
-                                                Fan Club Name</h3>
-                                            <input type="text" name="TextBoxFanClubName" id="TextBoxFanClubName" />
-                                            <h3>
-                                                What or Whom is this Fan Club About?</h3>
-                                            <input type="text" name="TextBoxTopic" id="TextBoxTopic" />
-                                        </div>
-                                        <div id="ageRegister">
-                                            <h5>
-                                                Fan Club Description</h5>
-                                            <textarea id="TextBoxDescription" rows="10" cols="30" tabindex="1" name="TextBoxDescription">                         	
+                                        Fan Club Description</h5>
+                                    <textarea id="TextBoxDescription" rows="10" cols="30" tabindex="1" name="TextBoxDescription">                         	
                                              </textarea>
-                                        </div>
-                                        <div>
-                                            <!--   <h5>
+                                </div>
+                                <div>
+                                    <!--   <h5>
                                                 Fanclub Image</h5>
                                             <div>
                                                 <input id="file_upload" type="file" name="file_upload" />
@@ -331,62 +330,38 @@
                                          
                                             <br />
                                          -->
-                                            <br />
-                                            <input type="button" id="btnSubmit" name="btnSubmit" onclick="Create()" value="Create" />
-                                            <br />
-                                        </div>
-                                        <!-- <div class="sportsTab">
+                                    <br />
+                                    <input type="button" id="btnSubmit" name="btnSubmit" onclick="Create()" value="Create" />
+                                    <br />
+                                </div>
+                                <!-- <div class="sportsTab">
                                             <input type="button" name="#" value="Invite to Friends" />
                                             <input type="button" name="#" value="Impoart Contacts" />
                                         </div>-->
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- left area ends-->
-                <div id="divRightAdds" class="contentRight fRight">
-                </div>
-                <!-- advertisement area ends-->
             </div>
-            <!-- container ends-->
-            <!-- footer starts -->
-            <div id="footerWrap">
-                <!--<footer>
-              <a href="userprofile.html" title="home" target="_self">Home</a>
-              <a href="Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
-              <a href="CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
-              <a href="NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
-              <a href="ViewSubSport.html?SportName=Sports Health and Fitness" title="Sports Health & Fitness" target="_self">Sports Health & Fitness</a>
-              <a href="Write4Kids2ProSports.html"title="Write4K2PS" target="_self">Write4K2PS</a>
-              <a href="PersonalHomePage.html" title="PersonalHomePage" target="_self">PersonalHomePage</a>
-          </footer>-->
-                <div class="dots clear">
-                </div>
-                <!-- Social Icon -->
-                <div class="clearfix">
-                    <div class="copyright">
-                        &copy; Copyright 2010<br/>
-                        Kids2prosports.com</div>
-                    <!--<div class="socialIcons">
-                        <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
-                            target="_self">
-                            <img alt="facebook" src="images/facebook.png"/></a> <a href="http://www.myspace.com/kids2prosports"
-                                title="myspace" target="_self">
-                                <img alt="myspace" src="images/myspace.png"/></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
-                                    title="yahoo" target="#">
-                                    <img alt="yahoo" src="images/yahoo.png"/></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
-                                        title="youtube" target="_self">
-                                        <img alt="youtube" src="images/youtube.png"/></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
-                                            title="reddit" target="#">
-                                            <img alt="reddit" src="images/reddit.png"/></a> <a href="http://www.linkedin.com/in/kids2prosports"
-                                                title="linked" target="_self">
-                                                <img alt="linkedin" src="images/linkedin.png"/></a>
-                    </div>-->
-                    <!-- Social Icon -->
-                </div>
-                <!-- footer ends -->
-            </div>
+        </div>
+        <!-- left area ends-->
+        <div id="divRightAdds" class="contentRight fRight">
+        </div>
+        <!-- advertisement area ends-->
+    </div>
+    <!-- container ends-->
+    <!-- footer starts -->
+    <div id="footerWrap">
+        <div class="dots clear">
+        </div>
+        <!-- Social Icon -->
+        <div class="clearfix">
+            <div class="copyright">
+                &copy; Copyright 2010<br />
+                Kids2prosports.com</div>
+            <!-- Social Icon -->
+        </div>
+        <!-- footer ends -->
+    </div>
 </body>
 </html>
