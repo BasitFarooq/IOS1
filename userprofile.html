@@ -11,7 +11,7 @@
         $(document).ready(function () {
 
             if ($.Storage.get("UserName") == null || $.Storage.get("UserName") == "")
-            { window.location.href = 'login.html' }
+            { window.location.href = 'index.html' }
             var online = navigator.onLine;    // Detecting the internet connection
             if (online) {
                 // do your stuff
@@ -67,7 +67,7 @@
 	);
             }
             else {
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             }
         }
 
@@ -227,19 +227,11 @@
         <header>
           <nav>
               <ul class="clearfix">
-                  <li>
-                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
-                  </li>
-                  <li>
-                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
-                  </li>
-                  <li>
-                      <a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a>
-                  </li>
-                  
-                  <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
-                  </li>
+                <li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
+                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
+                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
+                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
+                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
               </ul>
           </nav>
       </header>
@@ -248,8 +240,6 @@
         <!-- inner menu starts-->
         <div class="innermenu">
             <ul class="clearfix">
-                <li><a href="index.html" title="home" target="_self">Home</a> </li>
-                <li class="sep"></li>
                 <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
             </ul>
         </div>
@@ -278,7 +268,7 @@
                         <label style="font-family: Arial, Helvetica, sans-serif; font-size: 11px" id="lblNoOfFollewrs" />
                     </div>-->
                 </div>
-               <!-- <div id="divRightAdds" class="contentRight fRight">
+                <!-- <div id="divRightAdds" class="contentRight fRight">
                 </div>-->
             </div>
         </div>

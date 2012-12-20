@@ -19,7 +19,7 @@
             }
             var UserName = $.Storage.get("UserName");
             if (UserName == null)
-            { window.location.href = "login.html"; }
+            { window.location.href = "index.html"; }
             else if (UserName == "guest") {
                 $('#btnSubmit').attr('disabled', 'disabled');
 
@@ -230,36 +230,25 @@
 </head>
 <body>
     <div id="wraper">
-        <header>
+         <header style="overflow: hidden;">
           <nav>
               <ul class="clearfix">
-                  <li>
-                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
-                  </li>
-                  <li>
-                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
-                  </li>
-                  <li>
-                      <a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a>
-                  </li>
-                  
-                  <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
-                  </li>
+                <li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
+                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
+                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
+                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
+                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
               </ul>
           </nav>
-    </div>
-    </header>
+      </header>
     <!--  //  </div></div>-->
     <!-- header ends -->
     <!-- container starts-->
     <div class="innermenu">
-        <ul class="clearfix">
-            <li><a href="index.html" title="home" target="_self">Home</a> </li>
-            <li class="sep"></li>
-            <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
-        </ul>
-    </div>
+            <ul class="clearfix">
+                <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
+            </ul>
+        </div>
     <div class="contetns clearfix">
         <!-- left area starts-->
         <div class="contentLeft fLeft">
@@ -345,8 +334,8 @@
             </div>
         </div>
         <!-- left area ends-->
-        <div id="divRightAdds" class="contentRight fRight">
-        </div>
+        <!--<div id="divRightAdds" class="contentRight fRight">
+        </div>-->
         <!-- advertisement area ends-->
     </div>
     <!-- container ends-->
@@ -362,6 +351,7 @@
             <!-- Social Icon -->
         </div>
         <!-- footer ends -->
+    </div>
     </div>
 </body>
 </html>

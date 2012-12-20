@@ -17,7 +17,7 @@
             }
             var UserName = $.Storage.get("UserName");
             if (UserName == null)
-            { window.location.href = "login.html"; }
+            { window.location.href = "index.html"; }
             else if (UserName == "guest") {
                 $('#btnSubmit').attr('disabled', 'disabled');
 
@@ -445,31 +445,21 @@
 </head>
 <body>
     <div id="wraper">
-        <header>
+        <header style="overflow: hidden;">
           <nav>
               <ul class="clearfix">
-                  <li>
-                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
-                  </li>
-                  <li>
-                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
-                  </li>
-                  <li>
-                      <a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a>
-                  </li>
-                  
-                  <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a>
-                  </li>
+                <li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
+                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
+                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
+                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
+                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
               </ul>
           </nav>
       </header>
         <!-- header ends -->
         <div class="innermenu">
             <ul class="clearfix">
-                <li><a href="index.html" title="home" target="_self">Home</a> </li>
-                <li class="sep"></li>
-                <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
+                <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
             </ul>
         </div>
         <!-- container starts-->
@@ -485,7 +475,7 @@
                                     <a href="TeamSearch.html" title="#">Search for Existing Teams</a></h4>
                                 <h5>
                                     <b>Team Information</b></h5>
-                                <br>
+                                <br/>
                                 <h5>
                                     Sport</h5>
                                 <div class="row newuser">
@@ -582,20 +572,14 @@
                 </div>
             </div>
             <!-- left area ends-->
-            <div id="divRightAdds" class="contentRight fRight">
-            </div>
+            <!--<div id="divRightAdds" class="contentRight fRight">
+            </div>-->
             <!-- advertisement area ends-->
         </div>
         <!-- container ends-->
         <!-- footer starts -->
         <footer>
-                <!--<a href="userprofile.html" title="home" target="_self">Home</a>
-              <a href="Affiliates.html" title="Affiliates" target="_self">Affiliates</a>
-              <a href="CollegiateRecruiting.html"title="Collegiate Recruiting" target="_self">Collegiate Recruiting</a>
-              <a href="NewsAndEvents.html"title="News & Events" target="_self">News & Events</a>
-              <a href="ViewSubSport.html?SportName=Sports Health and Fitness" title="Sports Health & Fitness" target="_self">Sports Health & Fitness</a>
-              <a href="Write4Kids2ProSports.html"title="Write4K2PS" target="_self">Write4K2PS</a>
-              <a href="PersonalHomePage.html" title="PersonalHomePage" target="_self">PersonalHomePage</a>-->
+                
           </footer>
         <div class="dots clear">
         </div>
@@ -604,21 +588,7 @@
             <div class="copyright">
                 &copy; Copyright 2010<br/>
                 Kids2prosports.com</div>
-            <!--<div class="socialIcons">
-                <a href="http://www.facebook.com/pages/Kids2ProSportscom/246679545408252" title="facebook"
-                    target="_self">
-                    <img alt="facebook" src="images/facebook.png" /></a> <a href="http://www.myspace.com/kids2prosports"
-                        title="myspace" target="_self">
-                        <img alt="myspace" src="images/myspace.png" /></a> <a href="http://sports.groups.yahoo.com/group/Kids2ProSports/"
-                            title="yahoo" target="#">
-                            <img alt="yahoo" src="images/yahoo.png" /></a> <a href="http://www.youtube.com/user/Kids2ProSports?ytsession=z-2bpR1F6KkzxpJXqUAuSu8npv_EAufzd8UxWG-wO5M7JJFFtEn4bzGiAjxyK77nRARXqOXvl0_lHPWLZSbjPLH5W6VE-Awt2DS2O0P13TfAJJIPjPnsPg2r0pvhvlcPvhJAC41cGiHg_FmPuR7MnwCoUVwPrdqonK2wykowr7AfvwqJbBaiQ4qoO7Z7M7ixFyTv2MB6OnHSs0Ztf6LbmUb8dI6xfiexczjVBMOjViU"
-                                title="youtube" target="_self">
-                                <img alt="youtube" src="images/youtube.png" /></a> <a href="http://www.reddit.com/r/sports/comments/pamgt/kids2prosports_expands_it_international_sports/?already_submitted=true"
-                                    title="reddit" target="#">
-                                    <img alt="reddit" src="images/reddit.png" /></a> <a href="http://www.linkedin.com/in/kids2prosports"
-                                        title="linked" target="_self">
-                                        <img alt="linkedin" src="images/linkedin.png" /></a>
-            </div>-->
+            
             <!-- Social Icon -->
         </div>
         <!-- footer ends -->
