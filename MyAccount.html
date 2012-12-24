@@ -3,7 +3,8 @@
 <head>
     <title></title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery.Storage.js"></script>
     <script type="text/javascript" src="js/jquery.jsonp-2.1.3.min.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.20/themes/base/jquery-ui.css"
@@ -12,6 +13,35 @@
         type="text/css" media="all" />
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>-->
     <script src="http://code.jquery.com/ui/1.8.20/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- toggle menu -->
+    <script type="text/javascript">
+        $(function () {
+            // run the currently selected effect
+            function runEffect() {
+                // get effect type from
+                var selectedEffect = $("#effectTypes").val();
+
+                // most effect types need no options passed by default
+                var options = {};
+                // some effects have required parameters
+                if (selectedEffect === "scale") {
+                    options = { percent: 0 };
+                } else if (selectedEffect === "size") {
+                    options = { to: { width: 200, height: 60} };
+                }
+
+                // run the effect
+                $("#effect").toggle(selectedEffect, options, 300);
+            };
+
+            // set effect from select menu value
+            $("#button").click(function () {
+                runEffect();
+                return false;
+            });
+        });
+    </script>
+    <!-- toggle menu ends -->
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -690,9 +720,9 @@
     </script>
 </head>
 <body>
-    <div id="wraper">
-         <header style="overflow: hidden;">
-          <nav>
+    <header style="overflow: hidden;">
+        <div style="background:#800000; height:57px;"></div>
+          <!--<!--<nav>
               <ul class="clearfix">
                 <li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
                 <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
@@ -700,9 +730,24 @@
                 <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
                 <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
               </ul>
-          </nav>
-      </header>
-     
+          </nav>-->-->
+           <select name="effects" id="effectTypes" style="display:none;">
+    <option value="drop">Drop</option>
+
+</select>
+<a href="#" id="button"> </a>
+<div class="toggler">
+    <div id="effect" class="ui-widget-content ui-corner-all" style="display:none;">
+		<ul id="nav">
+        	<li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
+                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
+                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
+                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
+                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
+        </ul>
+    </div>
+</div>
+      </header>     
         <!-- header ends -->
         <!-- container starts-->
         
@@ -713,26 +758,7 @@
                     Welcome to the My Account Page
                 </div>
                 <div class="notes">
-                    <p>
-                        The 'My Account' page is where you can create and update all of your personal information.
-                        You can also add multiple sports and sport related profiles as well as profiles
-                        for your children who are under the age of thirteen. Although it is recommended
-                        you respond to as many questions for interacting, making connections and establishing
-                        your sports legacy, submitting to all of the questions is not a requirement.</p>
-                    <p>
-                        The 'My Account' page is where you can create and update all of your personal information.
-                        You can also add multiple sports and sport related profiles as well as profiles
-                        for your children who are under the age of thirteen. Although it is recommended
-                        you respond to as many questions for interacting, making connections and establishing
-                        your sports legacy, submitting to all of the questions is not a requirement. To
-                        start creating, sharing and preserving your sports legacy proceed to our <a href="#"
-                            title="">Timeline Feature link to submit your content, videos, articles and pertinent
-                            information of your sport and sport related activities, highlights, events, awards,
-                            testimonials, educational achievements…. and more, in your preferred languages.</a></p>
-                    <p>
-                        If You Need Help please go to our Profile FAQ here. If your question is not answered,
-                        please forward it to <a href="mailto:support@k2ps.com"></a>
-                    </p>
+                    
                 </div>
                 <div class="profileWrap">
                     <div class="errorLogin">

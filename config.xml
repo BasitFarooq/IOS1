@@ -40,8 +40,8 @@
        
  
   <!--Splash ends-->
- <preference name="orientation" value="landscape" />
 
-  
+
+   <preference name="orientation" value="landscape" />
   
 </widget>
