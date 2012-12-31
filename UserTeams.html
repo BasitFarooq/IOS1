@@ -263,56 +263,6 @@ success: function (response, status) {
 	);
 }	
 </script>
-<script type="text/javascript" >
-
-function GetRightAdver() {
-	
-$.ajax(
-{
-type: "POST",
-url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
-data: "{}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-
-success: function (response, status) {
-
- 	    $.Storage.get("UserName");
-		var asd =$("#divRightAdds");
-		$("#divRightAdds").html(response.d);
-    	},
-		failure: function (msg) {
-		alert(msg);
-		}
-	}
-	);
-}	
-</script>
-<script type="text/javascript" >
-
-function GetLeaderBoard() {
-	
-$.ajax(
-{
-type: "POST",
-url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetLeaderBoard",
-data: "{}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-
-success: function (response, status) {
-	
- 	    $.Storage.get("UserName");
-		var asd =$("#divLeaderBoard");
-		$("#divLeaderBoard").html(response.d);	
-		},
-		failure: function (msg) {
-		alert(msg);
-		}
-	}
-	);
-}	
-</script>
 
 <script type="text/javascript" >
 
@@ -349,15 +299,6 @@ success: function (response, status) {
   <div id="wraper">
      <header style="overflow: hidden;">
         <div style="background:#800000; height:57px;"></div>
-          <!--<!--<nav>
-              <ul class="clearfix">
-                <li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
-                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
-                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
-                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
-                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
-              </ul>
-          </nav>-->-->
            <select name="effects" id="effectTypes" style="display:none;">
     <option value="drop">Drop</option>
 
