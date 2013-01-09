@@ -29,7 +29,7 @@ h4 { font-size:14px; margin:10px 0 5px 0; color:#000000; }
 /* ------- end --------- */
 
 /* containers */
-#wraper {  min-width:1000px; }
+#wraper { }
 #contents { clear:both; margin-top:20px; border:1px solid #ccc; padding:15px; }
 #header { height:120px; }
 /* ------- end --------- */
@@ -113,7 +113,7 @@ table.gridData tr.even { background:#f0f0f0; border-top:1px solid #dddddd;}
 .footer ul li a, .footer ul li a:visited { float:left; color:#000000; text-decoration:none; }
 .footer ul li a:hover { color:#00aaff; text-decoration:none; }
 .footerBg { background:#ffffff url(../images/footer-bg.gif) repeat-x left bottom; }
-.copyright { float:right; width:340px; color:#666666; height:30px; line-height:30px; font-size:11px; font-weight:bold;  }
+/*.copyright { float:right; width:340px; color:#666666; height:30px; line-height:30px; font-size:11px; font-weight:bold;  }*/
 .prevnext { display:none; }
 /* ------- end --------- */
 
