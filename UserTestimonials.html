@@ -154,58 +154,6 @@ function GetUserTestimonialsSport(){
 </script>
 <script type="text/javascript">
 
-function GeneralInfo() {
-      var User = $.Storage.get("UserName");
-      if (User != null) {
-$.ajax(
-	  {
-	      type: "POST",
-	      url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetGeneralProfileInformation",
-	      data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName") + "'}",
-	      contentType: "application/json; charset=utf-8",
-	      dataType: "json",
-
-	      success: function (response, status) {
-
-	          $.Storage.get("UserName");
-	          var asd = $("#divGenralInfo");
-	          $("#divGenralInfo").html(response.d);
-	          $("#divUserName").html($.Storage.get("UserName")).append(" Profile");
-	      },
-	      failure: function (msg) {
-	          alert(msg);
-	      }
-	  }
-	);
-            }
-
-        }
-
-function GetLanguageInfo() {
-
- $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetLanguageInfo",
-    data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName") + "'}",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-        //alert('1');
-        $.Storage.get("UserName");
-        var asd = $("#divLanguageInfo");
-        $("#divLanguageInfo").html(response.d);
-
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-}
-	);
-        }
-
 
 function GetLeftColumn() {
 
@@ -229,81 +177,7 @@ function GetLeftColumn() {
 	);
         }
 
-function GetSocialMeta() {
 
-            $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetSocialMeta",
-    data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName") + "'}",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-       
-        $.Storage.get("UserName");
-        var asd = $("#divSocialMeta");
-        $("#divSocialMeta").html(response.d);
-
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-}
-	);
-        }
-
-//function GetRightAdver() {
-
-//            $.ajax(
-//{
-//    type: "POST",
-//    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
-//    data: "{}",
-//    contentType: "application/json; charset=utf-8",
-//    dataType: "json",
-
-//    success: function (response, status) {
-//        //alert('1');
-//        $.Storage.get("UserName");
-//        var asd = $("#divRightAdds");
-//        $("#divRightAdds").html(response.d);
-
-
-//    },
-//    failure: function (msg) {
-//        alert(msg);
-//    }
-//}
-//	);
-//        }
-
-//function GetLeaderBoard() {
-
-//            $.ajax(
-//{
-//    type: "POST",
-//    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetLeaderBoard",
-//    data: "{}",
-//    contentType: "application/json; charset=utf-8",
-//    dataType: "json",
-
-//    success: function (response, status) {
-//        //alert('1');
-//        $.Storage.get("UserName");
-//        var asd = $("#divLeaderBoard");
-//        //alert(asd);
-
-//        $("#divLeaderBoard").html(response.d);
-
-
-//    },
-//    failure: function (msg) {
-//        alert(msg);
-//    }
-//});
-//        }
 
  function GetNoOfFollowers() {
 
@@ -330,7 +204,7 @@ function GetSocialMeta() {
     </script>
     
 </head>
-<body onload="GeneralInfo(),GetLanguageInfo(),GetLeftColumn(),GetSocialMeta(),GetLeaderBoard(), GetNoOfFollowers() ">
+<body onload="GetLeftColumn(),GetUserTestimonialsSport(),GetNoOfFollowers() ">
 
         <div id="wraper">
       <header style="overflow: hidden;">
@@ -361,9 +235,6 @@ function GetSocialMeta() {
             </ul>
         </div>
         <!-- inner menu ends-->
-        <div id="divLeaderBoard">
-        </div>
-        <br />
         <div class="contetns">
             <div id="userProfile">
                 <div class="clearfix">
@@ -373,24 +244,10 @@ function GetSocialMeta() {
                     <div id="divUserName" class="fLeft">
                     </div>
                 </div>
-                <div id="divGenralInfo">
-                </div>
-               <br />
-                <div id="divLanguageInfo">
-                </div>
-                 <br />
                 <div>
-                    <div style="float: left;" id="divLefColoumn">
+                    <div style="float: left; width: 120px; margin-right: 15px;" id="divLefColoumn">
                     </div>
-                    <div id="divRightAdds" style="float: left;">
-                    </div>
-                    <br/>
-                    <div id="divSocialMeta" style="clear: both;">
-                    </div>
-                    <br/>
-                 
-                    <br/>
-                        <div>
+                        <div style="float: left;">
                             <table width="316" id="TableTestimonials" >
                                 <thead>
                                     <tr>
@@ -409,12 +266,14 @@ function GetSocialMeta() {
                                     </tr>
                                 </thead>
                             </table>
-                       </div>
-                        
-                        <br/>
+
+                             <br/>
                         <div>
                             <label style="font-family: Arial, Helvetica, sans-serif; font-size: 12px" id="lblNoOfFollewrs" />
                         </div>
+                       </div>
+                        
+                       
                         <br/>
               </div>
                 </div>

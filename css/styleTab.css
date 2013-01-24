@@ -20,9 +20,18 @@ a:hover {  text-decoration:underline; }
 .clear { clear: both; }
 /*-----------------*/
 
+
 /* headings */
 h1 { font-weight:normal; font-size:20px; padding:0 0 10px 0; color:#0181c4; }
-h2 { font-weight:normal; font-size:18px; padding:0 0 10px 0; color:#00304a; }
+/*h2 { font-weight:normal; font-size:18px; padding:0 0 10px 0; color:#00304a; }*/
+h2 {
+    font-family: Formata,Arial,Helvetica,sans-serif !important;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 0;
+    text-transform: uppercase;
+    visibility: visible !important;
+}
 h3 { font-size:14px; margin:5px 0; color:#00aaff; }
 h4 { font-size:14px; margin:10px 0 5px 0; color:#000000; }
 .subHeading { background:url(../images/sub-head-bg.gif) repeat-x left top; height:39px; line-height:30px; padding:0 8px; color:#00263a; font-size:18px; }

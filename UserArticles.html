@@ -240,35 +240,6 @@ function GetArticlesWithSport(){
     </script>
     <script type="text/javascript">
 
-        function GeneralInfo() {
-            var User = $.Storage.get("UserName");
-
-            if (User != null) {
-
-
-                $.ajax(
-	  {
-	      type: "POST",
-	      url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetGeneralProfileInformation",
-	      data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName") + "'}",
-	      contentType: "application/json; charset=utf-8",
-	      dataType: "json",
-
-	      success: function (response, status) {
-
-	          $.Storage.get("UserName");
-	          var asd = $("#divGenralInfo");
-	          $("#divGenralInfo").html(response.d);
-	          $("#divUserName").html($.Storage.get("UserName")).append(" Profile");
-	      },
-	      failure: function (msg) {
-	          alert(msg);
-	      }
-	  }
-	);
-            }
-
-        }
 
         function GetLanguageInfo() {
 
@@ -323,143 +294,12 @@ function GetArticlesWithSport(){
 }
 	);
         }
-
-        function GetSocialMeta() {
-
-            $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetSocialMeta",
-    data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName") + "'}",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-        //alert('1');
-        $.Storage.get("UserName");
-        var asd = $("#divSocialMeta");
-        //alert(asd);
-
-        $("#divSocialMeta").html(response.d);
-
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-}
-	);
-        }
-
-        //function GetRightAdver() {
-
-        //            $.ajax(
-        //{
-        //    type: "POST",
-        //    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
-        //    data: "{}",
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-
-        //    success: function (response, status) {
-        //        //alert('1');
-        //        $.Storage.get("UserName");
-        //        var asd = $("#divRightAdds");
-        //        //alert(asd);
-
-        //        $("#divRightAdds").html(response.d);
-
-
-        //    },
-        //    failure: function (msg) {
-        //        alert(msg);
-        //    }
-
-        //}
-        //	);
-        //        }	
-
-        //function GetLeaderBoard() {
-
-        //            $.ajax(
-        //{
-        //    type: "POST",
-        //    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetLeaderBoard",
-        //    data: "{}",
-        //    contentType: "application/json; charset=utf-8",
-        //    dataType: "json",
-
-        //    success: function (response, status) {
-        //        //alert('1');
-        //        $.Storage.get("UserName");
-        //        var asd = $("#divLeaderBoard");
-        //        //alert(asd);
-
-        //        $("#divLeaderBoard").html(response.d);
-
-
-        //    },
-        //    failure: function (msg) {
-        //        alert(msg);}
-        //	});
-        //  }	
-
-        function GetNoOfFollowers() {
-
-            $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetNumberOfFollowers",
-    data: "{}",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-
-        var NoOfFollowers = "The Member has " + response.d + " Followers";
-        $("#lblNoOfFollewrs").text(NoOfFollowers);
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-});
-        }
-
-    </script>
-    <script type="text/javascript">
-
-        function HandleBlogPost() {
-            if ($('#TextBoxBlogEntry').val() != null && $('#DropDownListSportCategory').val() != '--------', $('#DropDownListSportName').val() != null || $('#DropDownListSportName').val() != '--------') {
-                Paramdata = { "body": $('#TextBoxBlogEntry').val(), "categories": $('#DropDownListSportCategory').val(), "sport": $('#DropDownListSportName').val(), "UserName": $.Storage.get("UserName") };
-
-                $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/HandleBlogPost",
-    data: JSON.stringify(Paramdata),
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-
-        alert('Success');
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-});
-            }
-            else {
-                alert('please enter required fields');
-            }
-        }
     </script>
 </head>
-<body onload="GeneralInfo(),GetLanguageInfo(),GetLeftColumn(),GetSocialMeta(),GetLeaderBoard(), GetNoOfFollowers() ">
-        <div id="wraper">
-            <header style="overflow: hidden;">
+<!--<body onload="GeneralInfo(),GetLanguageInfo(),GetLeftColumn(),GetSocialMeta(),GetLeaderBoard(), GetNoOfFollowers() ">-->
+<body onload="GetLeftColumn(), GetUserArticles(), GetNoOfFollowers() ">
+    <div id="wraper">
+        <header style="overflow: hidden;">
         <div style="background:#800000; height:57px;"></div>
            <select name="effects" id="effectTypes" style="display:none;">
     <option value="drop">Drop</option>
@@ -478,7 +318,6 @@ function GetArticlesWithSport(){
     </div>
 </div>
       </header>
-       
         <!-- header ends -->
         <!-- container starts-->
         <!-- inner menu starts-->
@@ -488,7 +327,6 @@ function GetArticlesWithSport(){
             </ul>
         </div>
         <!-- inner menu ends-->
-        <br />
         <div class="contetns">
             <div id="userProfile">
                 <div class="clearfix">
@@ -498,88 +336,39 @@ function GetArticlesWithSport(){
                     <div id="divUserName" class="fLeft">
                     </div>
                 </div>
-                <div id="divGenralInfo">
+                <div style="float: left; width: 120px; margin-right: 15px;" id="divLefColoumn">
                 </div>
-                <br />
-                <div id="divLanguageInfo">
-                </div>
-                <br />
-                <div>
-                    <div style="float: left;" id="divLefColoumn">
+                <div style="float: left;">
+                    <div id="errorMessage">
                     </div>
-                    <div id="divRightAdds" style="float: left;">
-                    </div>
-                    <div>
-                        <br />
-                        <div id="divSocialMeta" style="clear: both;">
-                        </div>
-                        <br />
-                        <div id="errorMessage">
-                        </div>
-                        <br />
-                        <a href="CreateArticle.html" target="_self" title="CreateArticle">Write an Article</a>
-                        <div id="other" class="domtab doprevnext clear">
-                            <ul class="domtabs clearfix">
-                                <li><a href="#t1">Articles Written by Member</a></li>
-                                <li><a href="#t2">Articles Written About Member</a></li>
-                            </ul>
-                            <!-- tabs 01 begins -->
-                            <div class="hideIt">
-                                <div id="t1">
-                                    <div class="blogPostModule">
-                                        <div>
-                                            <table id="ASPxGridViewKeywordArticles" class="dataTables_filter">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                            Title
-                                                        </th>
-                                                        <th>
-                                                            Written By:
-                                                        </th>
-                                                        <th>
-                                                            Date
-                                                        </th>
-                                                        <th>
-                                                            Preview
-                                                        </th>
-                                                        <th>
-                                                            ArticleID
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td colspan="5">
-                                                            <img src='images/ajax-loader.gif' />
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- end blogPostModule-->
-                                </div>
-                            </div>
-                            <!-- tabs 01 ends -->
-                            <!-- tabs 02 begins -->
-                            <div class="hideIt">
-                                <div id="t2">
+                    <a href="CreateArticle.html" target="_self" title="CreateArticle">Write an Article</a>
+                    <div id="other" class="domtab doprevnext clear">
+                        <ul class="domtabs clearfix" style="float: left">
+                            <li><a href="#t1">Articles Written by Member</a></li>
+                            <li><a href="#t2">Articles Written About Member</a></li>
+                        </ul>
+                        <!-- tabs 01 begins -->
+                        <div class="hideIt">
+                            <div id="t1">
+                                <div class="blogPostModule">
                                     <div>
-                                        <table id="ASPxGridViewTagged" class="dataTables_filter">
+                                        <table id="ASPxGridViewKeywordArticles" class="dataTables_filter">
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        DateTime
+                                                        Title
                                                     </th>
                                                     <th>
-                                                        Written By
+                                                        Written By:
                                                     </th>
                                                     <th>
                                                         Date
                                                     </th>
                                                     <th>
-                                                        blogText
+                                                        Preview
+                                                    </th>
+                                                    <th>
+                                                        ArticleID
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -593,23 +382,55 @@ function GetArticlesWithSport(){
                                         </table>
                                     </div>
                                 </div>
-                                <!-- tabs 02 ends -->
+                                <!-- end blogPostModule-->
                             </div>
-                            <br />
-                            <div>
-                                <label style="font-family: Arial, Helvetica, sans-serif; font-size: 12px" id="lblNoOfFollewrs" />
-                            </div>
-                            <br />
                         </div>
+                        <!-- tabs 01 ends -->
+                        <!-- tabs 02 begins -->
+                        <div class="hideIt">
+                            <div id="t2">
+                                <div>
+                                    <table id="ASPxGridViewTagged" class="dataTables_filter">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    DateTime
+                                                </th>
+                                                <th>
+                                                    Written By
+                                                </th>
+                                                <th>
+                                                    Date
+                                                </th>
+                                                <th>
+                                                    blogText
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="5">
+                                                    <img src='images/ajax-loader.gif' />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- tabs 02 ends -->
+                        </div>
+                        <br />
                     </div>
-                    <!-- container ends-->
-
+                    <br />
+                    <div>
+                        <label style="font-family: Arial, Helvetica, sans-serif; font-size: 12px" id="lblNoOfFollewrs" />
+                    </div>
                 </div>
+                <!-- container ends-->
             </div>
         </div>
-                    
-    <!-- footer starts -->
-                    <div id="footerWrap">
+        <!-- footer starts -->
+        <div id="footerWrap">
             <div class="dots clear">
             </div>
             <!-- Social Icon -->
@@ -620,7 +441,7 @@ function GetArticlesWithSport(){
             </div>
             <!-- Social Icon -->
         </div>
-                    <!-- footer ends -->
-     </div>
+        <!-- footer ends -->
+    </div>
 </body>
 </html>

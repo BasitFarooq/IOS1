@@ -3,12 +3,13 @@
 <head>
     <title></title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/media/images/favicon.ico" />
     <link href="css/demo_table.css" rel="stylesheet" type="text/css" />
     <link href="css/demo_page.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
     <script src="js/jquery-ui.js" type="text/javascript"></script>
     <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="js/jquery.listnav.min-2.1.js"></script>
+    <script src="js/jquery.dataTables.listnav.js"></script>
     <!-- toggle menu -->
     <script type="text/javascript">
         $(function () {
@@ -23,7 +24,7 @@
                 if (selectedEffect === "scale") {
                     options = { percent: 0 };
                 } else if (selectedEffect === "size") {
-                    options = { to: { width: 200, height: 60} };
+                    options = { to: { width: 200, height: 60 } };
                 }
 
                 // run the effect
@@ -49,7 +50,7 @@
                 return false;
             }
 
-            $('#example').dataTable();
+            var oTable = $('#example').dataTable();
             function renderTable(result) {
                 var dtData = [];
                 $.each(result, function () {
@@ -57,27 +58,33 @@
                           this.Name,
                            this.Sport
 
-                        ]);
+                    ]);
                 });
 
                 $('#SportsGrid').dataTable({ //SportsGrid is the id of the table
+                    "sDom": 'Zlfrtip',
                     'aaData': dtData,
                     'bLengthChange': false,
                     'bRetrieve': true,
                     'bFilter': true,
                     'bSort': false,
-                    'bInfo': false
+                    'bInfo': false,
+                    //"oSearch": { "sSearch": "", "bRegex": "false", "bSmart": "false" },
+                    "aoColumnDefs": [
+                                      { "bSearchable": false, "aTargets": [1] }
+                    ]
                 });
             }
 
             $.ajax({
                 url: 'http://2bvision.com/kids2promobile/SourceSportDataGrid.asmx/GetAllSports',
+                secureuri: false,
                 type: 'POST',
-                data: "{'HasGenderAge': '" + false + "','IsCountry':'" + false + "' ,'IsCollegeInt':'" + false + "','IsCollegeUSA':'" + false + "' ,'IsOlympic':'" + false + "'  ,'MajorSport':'Special Olympics','MajorSport2':'High School'}",
+                //data: "{'HasGenderAge': '" + false + "','IsCountry':'" + false + "' ,'IsCollegeInt':'" + false + "','IsCollegeUSA':'" + false + "' ,'IsOlympic':'" + false + "'  ,'MajorSport':'Special Olympics','MajorSport2':'High School'}",
+                data: "{'HasGenderAge': 'false','IsCountry':'false' ,'IsCollegeInt':'false','IsCollegeUSA':'false' ,'IsOlympic':'false'  ,'MajorSport':'Special Olympics','MajorSport2':'High School'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
-
                     renderTable(response.d);
                 },
                 failure: function (errMsg) {
@@ -92,149 +99,7 @@
                 var firstCellText = $("td:eq(0)", this).text();
                 window.location.href = 'ViewSubSport.html?SportName=' + firstCellText;
             });
-        });	
-    </script>
-    <script language="javascript" type="text/javascript">
-
-
-
-        function seA() {
-
-            var s = $("#BtnA").text();
-            $('input').val(s);
-            $('SportsGrid').contents().add();
-        }
-
-        function seB() {
-
-            var s = $("#BtnB").text();
-            $('input').val(s);
-        }
-
-        function seC() {
-
-            var s = $("#BtnC").text();
-            $('input').val(s);
-        }
-
-        function seD() {
-
-            var s = $("#BtnD").text();
-            $('input').val(s);
-        }
-
-        function seE() {
-
-            var s = $("#BtnE").text();
-            $('input').val(s);
-        }
-        function seF() {
-
-            var s = $("#BtnF").text();
-            $('input').val(s);
-        }
-        function seG() {
-
-            var s = $("#BtnG").text();
-            $('input').val(s);
-        }
-        function seH() {
-
-            var s = $("#BtnH").text();
-            $('input').val(s);
-        }
-        function seI() {
-
-            var s = $("#BtnI").text();
-            $('input').val(s);
-        }
-        function seJ() {
-
-            var s = $("#BtnJ").text();
-            $('input').val(s);
-        }
-        function seK() {
-
-            var s = $("#BtnK").text();
-            $('input').val(s);
-        }
-        function seL() {
-
-            var s = $("#BtnL").text();
-            $('input').val(s);
-        }
-        function seM() {
-
-            var s = $("#BtnM").text();
-            $('input').val(s);
-        }
-        function seN() {
-
-            var s = $("#BtnN").text();
-            $('input').val(s);
-        }
-        function seO() {
-
-            var s = $("#BtnO").text();
-            $('input').val(s);
-        }
-        function seP() {
-
-            var s = $("#BtnP").text();
-            $('input').val(s);
-        }
-        function seQ() {
-
-            var s = $("#BtnQ").text();
-            $('input').val(s);
-        }
-        function seR() {
-
-            var s = $("#BtnR").text();
-            $('input').val(s);
-        }
-        function seS() {
-
-            var s = $("#BtnS").text();
-            $('input').val(s);
-        }
-        function seT() {
-
-            var s = $("#BtnT").text();
-            $('input').val(s);
-        }
-        function seU() {
-
-            var s = $("#BtnU").text();
-            $('input').val(s);
-        }
-        function seV() {
-
-            var s = $("#BtnV").text();
-            $('input').val(s);
-        }
-        function seW() {
-
-            var s = $("#BtnW").text();
-            $('input').val(s);
-        }
-        function seX() {
-
-            var s = $("#BtnX").text();
-            $('input').val(s);
-        }
-        function seY() {
-
-            var s = $("#BtnY").text();
-            $('input').val(s);
-        }
-        function seZ() {
-
-            var s = $("#BtnZ").text();
-            $('input').val(s);
-
-        }
-    
+        });
     </script>
 </head>
 <body>
@@ -273,10 +138,8 @@
             <!-- left area starts-->
             <div class="contentLeft fLeft">
                 <div class="innerwrapper">
-                    <h6>
-                        General Sports</h6>
+                    <h6>General Sports</h6>
                     <!-- contentLeft -->
-                    
                     <div class="clearfix">
                         <div class="sportSubNav fLeft">
                             <a href="SportsDefinitions.html"><span>General Sports</span> </a>
@@ -309,69 +172,12 @@
                     </div>
                 </div>
                 <br />
-                <div>
-                    <label id="BtnA" onclick="seA()">
-                        A</label>
-                    <label id="BtnB" onclick="seB()">
-                        B</label>
-                    <label id="BtnC" onclick="seC()">
-                        C</label>
-                    <label id="BtnD" onclick="seD()">
-                        D</label>
-                    <label id="BtnE" onclick="seE()">
-                        E</label>
-                    <label id="BtnF" onclick="seF()">
-                        F</label>
-                    <label id="BtnG" onclick="seG()">
-                        G</label>
-                    <label id="BtnH" onclick="seH()">
-                        H</label>
-                    <label id="BtnI" onclick="seI()">
-                        I</label>
-                    <label id="BtnJ" onclick="seJ()">
-                        J</label>
-                    <label id="BtnK" onclick="seK()">
-                        K</label>
-                    <label id="BtnL" onclick="seL()">
-                        L</label>
-                    <label id="BtnM" onclick="seM()">
-                        M</label>
-                    <label id="BtnN" onclick="seN()">
-                        N</label>
-                    <label id="BtnO" onclick="seO()">
-                        O</label>
-                    <label id="BtnP" onclick="seP()">
-                        P</label>
-                    <label id="BtnQ" onclick="seQ()">
-                        Q</label>
-                    <label id="BtnR" onclick="seR()">
-                        R</label>
-                    <label id="BtnS" onclick="seS()">
-                        S</label>
-                    <label id="BtnT" onclick="seT()">
-                        T</label>
-                    <label id="BtnU" onclick="seU()">
-                        U</label>
-                    <label id="BtnV" onclick="seV()">
-                        V</label>
-                    <label id="BtnW" onclick="seW()">
-                        W</label>
-                    <label id="BtnX" onclick="seX()">
-                        X</label>
-                    <label id="BtnY" onclick="seY()">
-                        Y</label>
-                    <label id="BtnZ" onclick="seZ()">
-                        Z</label>
-                </div>
-                <br />
                 <table id="SportsGrid" class="display">
                     <thead>
                         <tr>
-                            <th style="width: 80px;">
-                                Name
+                            <th style="width: 80px;">Name
                             </th>
-                            <th style="width: 80px;">
-                                Sports
+                            <th style="width: 80px;">Sports
                             </th>
                         </tr>
                     </thead>
@@ -390,20 +196,18 @@
                 <br />
                 <br />
             </div>
-            
         </div>
         <!-- container ends-->
         <!-- footer starts -->
         <div id="footerWrap">
-            
             <div class="dots clear">
             </div>
             <!-- Social Icon -->
             <div class="clearfix">
                 <div class="copyright">
                     &copy; Copyright 2010<br />
-                    Kids2prosports.com</div>
-                
+                    Kids2prosports.com
+                </div>
             </div>
             <!-- Social Icon -->
         </div>

@@ -439,7 +439,7 @@
     </script>
 </head>
 <body onload="HandleSportCountIncrementing(),IsUserAFollower(),GetNumberOfSportImpressions(),GetSportHierarchy(),GetSportDefinition(),GetRecentArticelsSection(),GetMediumRectangle(),EncodeSubNav(),GetRightAdver()">
-    <div id="wraper" class="">
+    <div id="wraper">
         <header style="overflow: hidden;">
         <div style="background:#800000; height:57px;"></div>
            <select name="effects" id="effectTypes" style="display:none;">
@@ -459,7 +459,7 @@
     </div>
 </div>
       </header>
-      <div class="innermenu">
+        <div class="innermenu">
             <ul class="clearfix">
                 <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
             </ul>
@@ -541,16 +541,18 @@
         </div>
         <!-- container ends-->
         <!-- footer starts -->
-        <div class="dots clear">
+        <div id="footerWrap">
+            <div class="dots clear">
+            </div>
+            <!-- Social Icon -->
+            <div class="clearfix">
+                <div class="copyright">
+                    &copy; Copyright 2010<br />
+                    Kids2prosports.com</div>
+            </div>
+            <!-- Social Icon -->
         </div>
-        <!-- Social Icon -->
-        <div class="clearfix">
-            <div class="copyright">
-                &copy; Copyright 2010<br />
-                Kids2prosports.com</div>
-        </div>
-        <!-- Social Icon -->
+        <!-- footer ends -->
     </div>
-    <!-- footer ends -->
 </body>
 </html>

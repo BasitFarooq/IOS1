@@ -154,63 +154,6 @@ function GetTeamsWithSport(){
                 }
             });
 }
-
-
-
-function GeneralInfo() {
-	var User =   $.Storage.get("UserName");
-	
-	if(User!=null){
-		
-	
-$.ajax(
-{
-type: "POST",
-url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetGeneralProfileInformation",
-data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName")+"'}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-
-success: function (response, status) {
-
-$("#divGenralInfo").html(response.d);			
-$("#divUserName").html($.Storage.get("UserName")).append(" Profile");
-	},
-		failure: function (msg) {
-		alert(msg);
-		}
-	}
-	);
-	}
-	else
-	{
-	 window.location.href='index.html';			
- 	}
-}	
-</script>
-
-<script type="text/javascript" >
-
-function GetLanguageInfo() {
-	
-$.ajax(
-{
-type: "POST",
-url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetLanguageInfo",
-data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName")+"'}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-
-success: function (response, status) {
-
-		$("#divLanguageInfo").html(response.d);	
-		},
-		failure: function (msg) {
-		alert(msg);
-		}
-	}
-	);
-}	
 </script>
 <script type="text/javascript" >
 
@@ -231,31 +174,6 @@ success: function (response, status) {
 		
 
 	},
-		failure: function (msg) {
-		alert(msg);
-		}
-	}
-	);
-}	
-</script>
-<script type="text/javascript" >
-
-function GetSocialMeta() {
-	
-$.ajax(
-{
-type: "POST",
-url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetSocialMeta",
-data: "{userName: '" + $.Storage.get("UserName") + "','viewingUser':'" + $.Storage.get("UserName")+"'}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-
-success: function (response, status) {
-	
- 	    $.Storage.get("UserName");
-		var asd =$("#divSocialMeta");
-		$("#divSocialMeta").html(response.d);	
-    	},
 		failure: function (msg) {
 		alert(msg);
 		}
@@ -293,8 +211,8 @@ success: function (response, status) {
 
 
 </head>
-
-<body onload="GeneralInfo(),GetLanguageInfo(),GetLeftColumn(),GetSocialMeta(),GetLeaderBoard(), GetNoOfFollowers() ">
+<!--<body onload="GeneralInfo(),GetLanguageInfo(),GetLeftColumn(),GetSocialMeta(),GetLeaderBoard(), GetNoOfFollowers() ">-->
+<body onload="GetLeftColumn(),GetTeamsWithSport(),GetNoOfFollowers() ">
   <div id="wraper">
      <header style="overflow: hidden;">
         <div style="background:#800000; height:57px;"></div>
@@ -326,33 +244,15 @@ success: function (response, status) {
        	
        <!-- inner menu ends-->
        
-       <div id="divLeaderBoard">
-       </div>
-       <br/>
-      <div class="contetns">
+        <div class="contetns">
       	<div id="userProfile">
         	<div class="clearfix">
             <div id="divUserName" class="fLeft"></div>
             </div>
-            <div id="divGenralInfo"   >
-            
-            </div>
-            <br/>
-             <div id="divLanguageInfo" >            
-            </div>
-             <br/>
              <div>
-             <div style="float:left;" id="divLefColoumn"  >
-            
+             <div style="float: left;width:120px; margin-right:15px;" id="divLefColoumn"  >
             </div>
-            <div id="divRightAdds" style="float:left;" >
-            </div>
-            <div>
-            <br/>
-              <div id="divSocialMeta" style="clear:both;" >            
-            </div>
-            <br/>
-           <div >
+           <div style="float: left;" >
               <table id="TeamSearchGrid"  >
                         <thead>
                             <tr>
@@ -370,14 +270,13 @@ success: function (response, status) {
                                 </td>
                             </tr>
                         </tbody>
-                    </table>             
-            </div>
-            <br/>        	
-			
-           <div>
+                    </table> 
+                    <br />
+                    <div>
            <label  style="font-family:Arial, Helvetica, sans-serif;font-size:12px" id="lblNoOfFollewrs" />
-           </div>
-              <br/>
+           </div>            
+            </div>
+           
         </div>
       </div>
       </div>

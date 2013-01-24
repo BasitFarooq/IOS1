@@ -149,29 +149,6 @@
         }
 
 
-        function GetSocialMeta() {
-
-            $.ajax(
-{
-    type: "POST",
-    url: "http://2bvision.com/kids2promobile/ProfileBuilderService.asmx/GetSocialMeta",
-    data: "{userName: '" + User + "','viewingUser':'" + ViewingUser + "'}",
-    contentType: "application/json; charset=utf-8",
-    dataType: "json",
-
-    success: function (response, status) {
-        $.Storage.get("UserName");
-        var asd = $("#divSocialMeta");
-        $("#divSocialMeta").html(response.d);
-
-
-    },
-    failure: function (msg) {
-        alert(msg);
-    }
-}
-	);
-        }
 
 
         //        function GetRightAdver() {

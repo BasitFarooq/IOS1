@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*
 Theme Name: Kids2prosports
 Theme URI: http://www.kids2prosports.com
@@ -89,7 +89,7 @@ ul li { font-size:12px; margin-bottom:3px; line-height:17px; list-style-type:non
 h1 { font-size: 13px; line-height:17px; font-weight: bold; visibility: visible !important; color:#680000; margin-bottom:5px; }
 h2 {
     font-family: Formata,Arial,Helvetica,sans-serif !important;
-    font-size: 18px;
+    font-size: 11px;
     font-weight: bold;
     margin-top: 0;
     text-transform: uppercase;
@@ -260,6 +260,8 @@ nav li:hover { background:#6f0505; height:53px;}
 .contetns {
 	padding:10px 10px 10px 10px;
 	margin:0 auto;
+	overflow: hidden;
+	
 		
 }
 .innermenu ul{
@@ -327,12 +329,15 @@ nav li:hover { background:#6f0505; height:53px;}
 	margin:10px 0;
 }
 .userLinks ul {
-	text-decoration:none;			
+	text-decoration:none; font-weight:bold;			
 }
+.userLinks ul img { display:none; }
+.userLinks ul li:first-Child { margin:5px 0 0 0;} 
 .userLinks ul li {
     display: block;
     height:20px;
 	line-height:20px;
+	font-weight:normal;
 }
 .userLinks ul li a, .userLinks ul li a:visited  {
     color: #000000;
@@ -341,6 +346,7 @@ nav li:hover { background:#6f0505; height:53px;}
 	line-height:20px;
     text-decoration: none;
 	list-style-type:none;
+	font-weight:normal;
 }
 .userLinks li img {
     border: medium none;
@@ -532,3 +538,49 @@ ul#nav li a, nav li a:visited { margin:0; padding:0; display: block; color: #999
  }
 ul#nav li a:hover { color:#ffffff;}
 /* ends */
+
+#blogPosts select { width:120px;}
+
+/*Top grid filter control CSS-starts*/
+#lnList-nav .ln-letters
+{
+overflow: hidden;
+margin: 0 0 10px;
+}
+
+#lnList-nav .ln-letters a
+{
+font-size: 0.9em;
+display: block;
+float: left;
+padding: 2px 6px;
+border: 1px solid silver;
+border-right: none;
+text-decoration: none;
+}
+
+#lnList-nav .ln-letters a.ln-last
+{
+border-right: 1px solid silver;
+}
+
+#lnList-nav .ln-letters a:hover,
+#lnList-nav .ln-letters a.ln-selected
+{
+background-color: #eaeaea;
+}
+
+#lnList-nav .ln-letters a.ln-disabled
+{
+color: #ccc;
+}
+
+#lnList-nav .ln-letter-count
+{
+text-align: center;
+font-size: 0.8em;
+line-height: 1;
+margin-bottom: 3px;
+color: #336699;
+}
+/*Ends*/
