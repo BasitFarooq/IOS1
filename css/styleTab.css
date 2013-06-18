@@ -20,25 +20,16 @@ a:hover {  text-decoration:underline; }
 .clear { clear: both; }
 /*-----------------*/
 
-
 /* headings */
 h1 { font-weight:normal; font-size:20px; padding:0 0 10px 0; color:#0181c4; }
-/*h2 { font-weight:normal; font-size:18px; padding:0 0 10px 0; color:#00304a; }*/
-h2 {
-    font-family: Formata,Arial,Helvetica,sans-serif !important;
-    font-size: 11px;
-    font-weight: bold;
-    margin-top: 0;
-    text-transform: uppercase;
-    visibility: visible !important;
-}
+h2 { font-weight:normal; font-size:18px; padding:0 0 10px 0; color:#00304a; }
 h3 { font-size:14px; margin:5px 0; color:#00aaff; }
 h4 { font-size:14px; margin:10px 0 5px 0; color:#000000; }
 .subHeading { background:url(../images/sub-head-bg.gif) repeat-x left top; height:39px; line-height:30px; padding:0 8px; color:#00263a; font-size:18px; }
 /* ------- end --------- */
 
 /* containers */
-#wraper { }
+#wraper {  min-width:1000px; }
 #contents { clear:both; margin-top:20px; border:1px solid #ccc; padding:15px; }
 #header { height:120px; }
 /* ------- end --------- */
@@ -122,7 +113,7 @@ table.gridData tr.even { background:#f0f0f0; border-top:1px solid #dddddd;}
 .footer ul li a, .footer ul li a:visited { float:left; color:#000000; text-decoration:none; }
 .footer ul li a:hover { color:#00aaff; text-decoration:none; }
 .footerBg { background:#ffffff url(../images/footer-bg.gif) repeat-x left bottom; }
-/*.copyright { float:right; width:340px; color:#666666; height:30px; line-height:30px; font-size:11px; font-weight:bold;  }*/
+.copyright { float:right; width:340px; color:#666666; height:30px; line-height:30px; font-size:11px; font-weight:bold;  }
 .prevnext { display:none; }
 /* ------- end --------- */
 

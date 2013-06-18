@@ -1,44 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
+
     <title></title>
+
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/demo_table.css" rel="stylesheet" type="text/css" />
     <link href="css/demo_page.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="js/jquery.listnav.min-2.1.js"></script>
     <script src="js/jquery.dataTables.listnav.js"></script>
-    <!-- toggle menu -->
-    <script type="text/javascript">
-        $(function () {
-            // run the currently selected effect
-            function runEffect() {
-                // get effect type from
-                var selectedEffect = $("#effectTypes").val();
-
-                // most effect types need no options passed by default
-                var options = {};
-                // some effects have required parameters
-                if (selectedEffect === "scale") {
-                    options = { percent: 0 };
-                } else if (selectedEffect === "size") {
-                    options = { to: { width: 200, height: 60} };
-                }
-
-                // run the effect
-                $("#effect").toggle(selectedEffect, options, 300);
-            };
-
-            // set effect from select menu value
-            $("#button").click(function () {
-                runEffect();
-                return false;
-            });
-        });
-    </script>
-    <!-- toggle menu ends -->
     <script language="javascript" type="text/javascript">
 
         $(document).ready(function () {
@@ -58,7 +30,7 @@
                            this.DisplayName,
 						   this.Sport,
 						   this.Gender
-                        ]);
+                    ]);
                 });
 
                 $('#SportsGenderGrid').dataTable({ //grid is the id of the table
@@ -71,12 +43,12 @@
                     'bInfo': false,
                     //"oSearch": { "sSearch": "", "bRegex": "false", "bSmart": "false" },
                     "aoColumnDefs": [
-                                      { "bSearchable": false, "aTargets": [1,2]}
+                                      { "bSearchable": false, "aTargets": [1, 2] }
                     ]
                 });
             }
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SportsDefinitionsGenderId.asmx/GetSpecialOlympicSports',
+                url: 'http://2bvision.com/Kids2proSports/SportsDefinitionsGenderId.asmx/GetSpecialOlympicSports',
                 type: 'POST',
                 data: "{'HasGenderAge': 'True','MajorSport2':'High School'}",
                 contentType: "application/json; charset=utf-8",
@@ -102,30 +74,34 @@
     </script>
 </head>
 <body>
-    <div id="wraper">
-        <header style="overflow: hidden;">
-        <div style="background:#800000; height:57px;"></div>
-           <select name="effects" id="effectTypes" style="display:none;">
-    <option value="drop">Drop</option>
 
-</select>
-<a href="#" id="button"> </a>
-<div class="toggler">
-    <div id="effect" class="ui-widget-content ui-corner-all" style="display:none;">
-		<ul id="nav">
-        	<li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
-                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
-                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
-                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
-                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
-        </ul>
-    </div>
-</div>
+    <div id="wraper">
+        <header>
+          <nav>
+              <ul class="clearfix">
+                  <li>
+                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
+                  </li>
+                  <li>
+                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
+                  </li>
+                  <li>
+                      <a href="CreateTeam.html" title="Teams" target="_self">Teams</a>
+                  </li>
+                  
+                  <li>
+                      <a href="CreateFanClub.html" title="Fanclubs" target="_self">Fan Clubs</a>
+                  </li>
+              </ul>
+          </nav>
       </header>
         <!-- header ends -->
         <div class="innermenu">
             <ul class="clearfix">
-                <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
+                <li><a href="index.html" title="home" target="_self">Home</a> </li>
+                <li class="sep"></li>
+                <li><a href="userprofile.html" title="profile" target="_self">Profile</a> </li>
+
             </ul>
         </div>
         <!-- container starts-->
@@ -135,41 +111,40 @@
                 <div class="innerwrapper">
                     <!-- contentLeft -->
                     <div class="clear">
-                        <h6>
-                            Sports by Gender/Age</h6>
                     </div>
+                    <div style="background-color: #8080E8">
+                        <h6>Sports by Gender/Age</h6>
+                        <p><b>Please view K2PS on your desktop, laptop or tablet for all options available in chosing from our 30,000 sport selections.</b></p>
+                        <p>In Sports by Gender/Age you can select your sport, gender and age by:</p>
+                        <p>(1) Type in the Name of the Sport to Begin Search</p>
+                        <p>(2) Utilize the “< >” links to view all of the sports listed in this option</p>
+                    </div>
+
                     <br />
                     <div class="clearfix">
                         <div class="sportSubNav fLeft">
                             <a href="SportsDefinitions.html" target="_self"><span>General Sports</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsSpecialOlympics.html" target="_self"><span>Special Olympics</span>
-                            </a>
+                            <a href="SportsDefinitionsSpecialOlympics.html" target="_self"><span>Special Olympics</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsGenderId.html" target="_self"><span>Sports by Gender/ID</span>
-                            </a>
+                            <a href="SportsDefinitionsGenderId.html" target="_self"><span>Sports by Gender/ID</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsCountries.html" target="_self"><span>Sports by Country</span>
-                            </a>
+                            <a href="SportsDefinitionsCountries.html" target="_self"><span>Sports by Country</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsColleges.html" target="_self"><span>College/University Sports</span>
-                            </a>
+                            <a href="SportsDefinitionsColleges.html" target="_self"><span>College/University Sports</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsCollegesInt.html" target="_self"><span>International College/University
-                                Sports</span> </a>
+                            <a href="SportsDefinitionsCollegesInt.html" target="_self"><span>International College/University Sports</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionsHighSchool.html" target="_self"><span>Sports By High School</span>
-                            </a>
+                            <a href="SportsDefinitionsHighSchool.html" target="_self"><span>Sports By High School</span> </a>
                         </div>
                         <div class="sportSubNav fLeft">
-                            <a href="SportsDefinitionOlympics.html" target="_self"><span>Olympics/Paralympics</span>
-                            </a>
+                            <a href="SportsDefinitionOlympics.html" target="_self"><span>Olympics/Paralympics</span> </a>
                         </div>
                     </div>
                 </div>
@@ -177,15 +152,12 @@
                 <table id="SportsGenderGrid" class="display">
                     <thead>
                         <tr>
-                            <th style="width: 80px; text-align: left;">
-                                Name
-                            </th>
-                            <th style="width: 80px; text-align: left;">
-                                Sports
-                            </th>
-                            <th style="width: 80px; text-align: left;">
-                                Gender/Age
-                            </th>
+                            <th style="width: 80px; text-align: left;">Name
+                                </th>
+                            <th style="width: 80px; text-align: left;">Sports
+                                </th>
+                            <th style="width: 80px; text-align: left;">Gender/Age
+                                </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -204,26 +176,13 @@
                 <br />
                 <br />
                 <br />
+
             </div>
             <!-- left area ends-->
-            <!-- advertisement area starts-->
-            <!-- advertisement area ends-->
+          
         </div>
         <!-- container ends-->
-        <!-- footer starts -->
-        <div id="footerWrap">
-            </footer>
-            <div class="dots clear">
-            </div>
-            <!-- Social Icon -->
-            <div class="clearfix">
-                <div class="copyright">
-                    &copy; Copyright 2010<br />
-                    Kids2prosports.com</div>
-            </div>
-            <!-- Social Icon -->
-        </div>
-        <!-- footer ends -->
+        
     </div>
 </body>
 </html>

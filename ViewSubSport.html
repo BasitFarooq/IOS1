@@ -2,45 +2,16 @@
 <html>
 <head>
     <title></title>
+
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/media/images/favicon.ico" />
     <link href="css/demo_table.css" rel="stylesheet" type="text/css" />
     <link href="css/demo_page.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
     <script src="js/jquery.json-2.2.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery.Storage.js"></script>
     <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" />
     <script type="text/javascript" src="http://vjs.zencdn.net/c/video.js"></script>
-    <!-- toggle menu -->
-    <script type="text/javascript">
-        $(function () {
-            // run the currently selected effect
-            function runEffect() {
-                // get effect type from
-                var selectedEffect = $("#effectTypes").val();
-
-                // most effect types need no options passed by default
-                var options = {};
-                // some effects have required parameters
-                if (selectedEffect === "scale") {
-                    options = { percent: 0 };
-                } else if (selectedEffect === "size") {
-                    options = { to: { width: 200, height: 60} };
-                }
-
-                // run the effect
-                $("#effect").toggle(selectedEffect, options, 300);
-            };
-
-            // set effect from select menu value
-            $("#button").click(function () {
-                runEffect();
-                return false;
-            });
-        });
-    </script>
-    <!-- toggle menu ends -->
     <script type="text/javascript">
         $(document).ready(function () {
             var online = navigator.onLine;    // Detecting the internet connection
@@ -76,7 +47,7 @@
 			{
 
 			    type: "POST",
-			    url: "http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetHomePageHeading",
+			    url: "http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetHomePageHeading",
 			    data: JSON.stringify(data),
 			    contentType: "application/json; charset=utf-8",
 			    dataType: "json",
@@ -93,7 +64,7 @@
 
             }
             else {
-                window.location.href = 'index.html';
+                window.location.href = 'login.html';
             }
         }
         /// ///
@@ -102,7 +73,7 @@
             var data = { "sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetRecentArticelsSection',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetRecentArticelsSection',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -125,7 +96,7 @@
             var data = { "userName": $.Storage.get("UserName"), "sport": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/IsUserAFollower',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/IsUserAFollower',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -165,7 +136,7 @@
             var data = { "_sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/HandleSportCountIncrementing',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/HandleSportCountIncrementing',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -186,7 +157,7 @@
             var data = { "sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetNumberOfSportImpressions',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetNumberOfSportImpressions',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -209,7 +180,7 @@
             var data = { "sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetSportHierarchy',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetSportHierarchy',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -229,7 +200,7 @@
             var data = { "sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetSportDefinition',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetSportDefinition',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -249,7 +220,7 @@
             queryString = getUrlVars()["SportName"]; queryString = queryString.replace('%20', '  ');
             var data = { "currentPage": "Main", "_sportName": queryString };
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/EncodeSubNav',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/EncodeSubNav',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -271,7 +242,7 @@
             var data = { "sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetRecentArticelsSection',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetRecentArticelsSection',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -289,7 +260,7 @@
         function GetMediumRectangle() {
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetMediumRectangle',
+                url: 'http://2bvision.com/Kids2proSports/AdvertisementManagerService.asmx/GetMediumRectangle',
                 type: 'POST',
                 data: {},
                 contentType: "application/json; charset=utf-8",
@@ -308,7 +279,7 @@
             queryString = getUrlVars()["SportName"]; queryString = queryString.replace('%20', '  ');
             var data = { "_sportName": queryString };
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetRecentVideoUrl',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetRecentVideoUrl',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -333,7 +304,7 @@
             queryString = getUrlVars()["SportName"]; queryString = queryString.replace('%20', '  ');
             var data = { "_sportName": queryString };
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/GetNoVideosMessage',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/GetNoVideosMessage',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -354,7 +325,7 @@
             $.ajax(
 {
     type: "POST",
-    url: "http://2bvision.com/kids2promobile/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
+    url: "http://2bvision.com/Kids2proSports/AdvertisementManagerService.asmx/GetRightAdvertisingColumn",
     data: "{}",
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -384,7 +355,7 @@
             var data = { "userName": $.Storage.get("UserName"), "_sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/HandleUserUnFollow',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/HandleUserUnFollow',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -405,7 +376,7 @@
                 }
             });
         }
-           
+
     </script>
     <script type="text/javascript">
 
@@ -416,7 +387,7 @@
             var data = { "userName": $.Storage.get("UserName"), "_sportName": queryString };
 
             $.ajax({
-                url: 'http://2bvision.com/kids2promobile/SporthomePageBuilder.asmx/HandleUserFollowing',
+                url: 'http://2bvision.com/Kids2proSports/SporthomePageBuilder.asmx/HandleUserFollowing',
                 type: 'POST',
                 data: JSON.stringify(data),
                 contentType: "application/json; charset=utf-8",
@@ -439,31 +410,30 @@
     </script>
 </head>
 <body onload="HandleSportCountIncrementing(),IsUserAFollower(),GetNumberOfSportImpressions(),GetSportHierarchy(),GetSportDefinition(),GetRecentArticelsSection(),GetMediumRectangle(),EncodeSubNav(),GetRightAdver()">
-    <div id="wraper">
-        <header style="overflow: hidden;">
-        <div style="background:#800000; height:57px;"></div>
-           <select name="effects" id="effectTypes" style="display:none;">
-    <option value="drop">Drop</option>
-
-</select>
-<a href="#" id="button"> </a>
-<div class="toggler">
-    <div id="effect" class="ui-widget-content ui-corner-all" style="display:none;">
-		<ul id="nav">
-        	<li><a href="userprofile.html" title="profile" target="_self">Profile</a></li>
-                <li><a href="SportsDefinitions.html" target="_self" title="Sports">Sports</a> </li>
-                <li><a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Article</a> </li>
-                <li><a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a></li>
-                <li><a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fanclubs</a></li>
-        </ul>
-    </div>
-</div>
+    <div id="wraper" class="">
+        <header>
+          <nav>
+              <ul id="" class="clearfix">
+                  <li>
+                      <a href="index.html" title="home" target="_self">Home</a>
+                  </li>
+                   <li>
+                      <a href="SportsDefinitions.html" title="contactus" target="_self">Sports</a>
+                  </li>
+                  <li>
+                      <a href="mediaKit.html" title="mediakit" target="_self">Media Kit</a>
+                  </li>
+                  <li>
+                      <a href="Faq.html" title="faq" target="_self">FAQ</a>
+                  </li>
+                 
+                  <li>
+                      <a href="ContactUs.html" title="contactus" target="_self">Contact Us</a>
+                  </li>
+                 
+              </ul>
+          </nav>
       </header>
-        <div class="innermenu">
-            <ul class="clearfix">
-                <li><a href="MyAccount.html" title="My Account" target="_self">My Account</a> </li>
-            </ul>
-        </div>
         <!-- header ends -->
         <!-- container starts-->
         <div class="contetns clearfix">
@@ -487,8 +457,7 @@
                 </div>
                 <br />
                 <div class="contentLeft">
-                    <h3>
-                        FEATURED VIDEO</h3>
+                    <h3>FEATURED VIDEO</h3>
                     <h4>
                         <label id="LabelVideoHeading">
                         </label>
@@ -511,8 +480,7 @@
                 </div>
                 <br />
                 <div id="DivFollow">
-                    <h6>
-                        Follow</h6>
+                    <h6>Follow</h6>
                     <input type="button" id="LinkButtonFollow" name="LinkButtonFollow" onclick="HandleUserFollowing()" />
                 </div>
                 <br />
@@ -534,25 +502,11 @@
                 </div>
                 <br />
             </div>
-            <!-- advertisement area starts-->
-            <!-- <div id="divRightAdds" class="contentRight fRight">
-            </div>-->
-            <!-- advertisement area ends-->
+
         </div>
+
         <!-- container ends-->
-        <!-- footer starts -->
-        <div id="footerWrap">
-            <div class="dots clear">
-            </div>
-            <!-- Social Icon -->
-            <div class="clearfix">
-                <div class="copyright">
-                    &copy; Copyright 2010<br />
-                    Kids2prosports.com</div>
-            </div>
-            <!-- Social Icon -->
-        </div>
-        <!-- footer ends -->
+
     </div>
 </body>
 </html>
